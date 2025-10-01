@@ -230,7 +230,7 @@ export default function Home() {
             </div>
             
             <p className="text-center text-foreground/70 italic">
-              "Solución escalable que mejoró la eficiencia operacional y la visibilidad de los proyectos."
+              &ldquo;Solución escalable que mejoró la eficiencia operacional y la visibilidad de los proyectos.&rdquo;
             </p>
           </div>
 
