@@ -9,7 +9,7 @@ export default function ServicesPage() {
             Nuestros <span className="text-primary">Servicios</span>
           </h1>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Transformación digital con resultados reales
+            Soluciones tecnológicas diseñadas para transformar tu negocio
           </p>
         </div>
       </section>
@@ -29,7 +29,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Desarrollo Full-Stack</h3>
               <p className="text-foreground/70 mb-6">
-                Apps web y móviles con tecnologías modernas.
+                Aplicaciones web y móviles modernas, con tecnologías de última generación.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-foreground/80">
@@ -65,7 +65,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Soluciones Cloud</h3>
               <p className="text-foreground/70 mb-6">
-                Infraestructura cloud optimizada con Azure.
+                Implementación y optimización de infraestructura cloud en Microsoft Azure.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-foreground/80">
@@ -101,7 +101,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Punto de Venta Personalizado</h3>
               <p className="text-foreground/70 mb-6">
-                Sistemas POS a medida con integración completa.
+                Sistemas POS a la medida de tu negocio, con integración completa.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-foreground/80">
@@ -137,7 +137,7 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-xl font-semibold text-foreground mb-4">Transformación Digital</h3>
               <p className="text-foreground/70 mb-6">
-                Modernización de procesos y sistemas empresariales.
+                Asesoría y consultoría para la modernización de procesos y sistemas.
               </p>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3 text-foreground/80">
@@ -166,11 +166,11 @@ export default function ServicesPage() {
 
       {/* Call to Action */}
       <section className="max-w-4xl mx-auto text-center px-4 py-10">
-        <p className="text-foreground/80 text-lg mb-8">
-          ¿Tienes un proyecto en mente?
+        <p className="text-gray-300 text-lg mb-8">
+          ¿Tienes un proyecto en mente o necesitas ayuda con un desafío tecnológico?
         </p>
-        <a href="/contact" className="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-md font-medium text-lg shadow-lg transition-all">
-          Contáctanos
+        <a href="/contact" className="inline-block bg-accent-teal hover:bg-accent-blue text-white px-8 py-3 rounded-md font-medium text-lg shadow-lg transition-all">
+          Contáctanos hoy
         </a>
       </section>
     </div>

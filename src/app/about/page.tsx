@@ -9,7 +9,7 @@ export default function AboutPage() {
             Sobre <span className="text-primary">EkaliSpA</span>
           </h1>
           <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
-            Transformamos ideas en soluciones digitales que impulsan el futuro empresarial
+            Consultoría tech con resultados reales
           </p>
         </div>
       </section>
@@ -20,15 +20,8 @@ export default function AboutPage() {
           <div className="max-w-none space-y-8">
             <div className="space-y-6">
               <p className="text-lg text-foreground/90 leading-relaxed">
-                Somos una empresa de consultoría tecnológica especializada en el desarrollo de software, 
-                mejora y construcción de aplicaciones, y soluciones informáticas a medida para empresas 
-                que buscan transformar sus procesos.
-              </p>
-              
-              <p className="text-foreground/80 leading-relaxed">
-                Nuestro objetivo es impulsar la transformación digital de negocios, optimizar procesos 
-                y crear plataformas innovadoras que potencien el crecimiento de nuestros clientes en el 
-                competitivo entorno tecnológico actual.
+                Consultoría tecnológica especializada en desarrollo de software, Power Platform y soluciones cloud. 
+                Transformamos procesos empresariales con tecnología que genera resultados reales.
               </p>
             </div>
 
@@ -36,15 +29,13 @@ export default function AboutPage() {
               <div className="bg-background p-6 rounded-lg border-l-2 border-primary">
                 <h3 className="font-semibold text-xl text-foreground mb-3">Nuestra Misión</h3>
                 <p className="text-foreground/70">
-                  Brindar soluciones tecnológicas innovadoras que impulsen el crecimiento y 
-                  éxito de nuestros clientes a través de desarrollos de alta calidad y consultoría especializada.
+                  Impulsar el crecimiento de empresas con soluciones tecnológicas que generan resultados.
                 </p>
               </div>
               <div className="bg-background p-6 rounded-lg border-l-2 border-secondary">
                 <h3 className="font-semibold text-xl text-foreground mb-3">Nuestra Visión</h3>
                 <p className="text-foreground/70">
-                  Ser referentes en transformación digital y desarrollo de software a medida 
-                  en el mercado latinoamericano, conocidos por nuestra excelencia técnica e innovación.
+                  Ser referentes en transformación digital en Latinoamérica.
                 </p>
               </div>
             </div>
@@ -61,7 +52,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Innovación</h3>
-                    <p className="text-foreground/70 text-sm mt-1">Buscamos constantemente las soluciones más avanzadas y eficientes</p>
+                    <p className="text-foreground/70 text-sm mt-1">Soluciones avanzadas y eficientes</p>
                   </div>
                 </div>
                 
@@ -73,7 +64,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Calidad</h3>
-                    <p className="text-foreground/70 text-sm mt-1">Nos comprometemos con los más altos estándares de desarrollo</p>
+                    <p className="text-foreground/70 text-sm mt-1">Estándares altos en cada desarrollo</p>
                   </div>
                 </div>
                 
@@ -85,7 +76,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Colaboración</h3>
-                    <p className="text-foreground/70 text-sm mt-1">Trabajamos junto a nuestros clientes como verdaderos socios</p>
+                    <p className="text-foreground/70 text-sm mt-1">Socios estratégicos de nuestros clientes</p>
                   </div>
                 </div>
                 
@@ -97,7 +88,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-medium text-foreground">Adaptabilidad</h3>
-                    <p className="text-foreground/70 text-sm mt-1">Nos adaptamos rápidamente a nuevas tecnologías y necesidades</p>
+                    <p className="text-foreground/70 text-sm mt-1">Rápida adopción de nuevas tecnologías</p>
                   </div>
                 </div>
               </div>
