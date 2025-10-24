@@ -20,29 +20,30 @@
 
 /* Fondo blanco detrás del logo en navbar/footer para contraste */
 .logo-bg {
-  background: #fff;
+  background: linear-gradient(135deg, #F8FAFC 0%, #FFFFFF 100%);
   border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(25,49,67,0.08);
-  padding: 0.25rem;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+  padding: 0.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.1);
 }
 
 /* Estilo personalizado para scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f7f9;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #193143;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #3B82F6 0%, #2563EB 100%);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f1f2d;
+  background: linear-gradient(180deg, #2563EB 0%, #1E40AF 100%);
 }
 
 /* Estilos para efectos de hover en tarjetas mejorados */
@@ -89,35 +90,62 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gradiente de texto mejorado */
+/* Gradiente de texto mejorado - Nueva identidad */
 .gradient-text {
-  background: linear-gradient(135deg, #193143 0%, #1a7fe8 100%);
+  background: linear-gradient(135deg, #0F172A 0%, #3B82F6 50%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
+/* Gradiente corporativo principal */
+.gradient-primary {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+}
+
+/* Gradiente azul innovación */
+.gradient-secondary {
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+}
+
+/* Gradiente éxito */
+.gradient-accent {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+}
+
 /* Efectos de botones mejorados */
 .btn-primary {
-  background: linear-gradient(135deg, #193143 0%, #0f1f2d 100%);
-  box-shadow: 0 10px 20px rgba(25, 49, 67, 0.2);
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #0f1f2d 0%, #193143 100%);
-  box-shadow: 0 20px 40px rgba(25, 49, 67, 0.4);
+  background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #1a7fe8 0%, #1566c0 100%);
-  box-shadow: 0 10px 20px rgba(26, 127, 232, 0.2);
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #1566c0 0%, #1a7fe8 100%);
-  box-shadow: 0 20px 40px rgba(26, 127, 232, 0.4);
+  background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-accent:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
   transform: translateY(-2px);
 }

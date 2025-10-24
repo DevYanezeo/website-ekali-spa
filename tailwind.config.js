@@ -8,22 +8,29 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Nueva paleta corporativa seria y tecnológica
-        background: '#F8FAFC', // Blanco humo muy claro
-        foreground: '#193143', // Azul oscuro corporativo para textos
-        primary: '#193143', // Azul oscuro corporativo (seriedad, tecnología)
-        secondary: '#1a7fe8', // Azul vibrante como acento
-        accent: '#22bb86', // Verde como acento complementario
-        surface: '#FFFFFF', // Blanco puro para tarjetas
-        'surface-secondary': '#f5f7f9', // Gris muy claro para secciones alternadas
-        'text-soft': '#7f929c', // Gris azulado para textos suaves
-        'bg-secondary': '#f5f7f9', // Fondo secundario gris azulado
-        dark: '#193143', // Azul oscuro corporativo
-        'dark-light': '#2a4558', // Azul oscuro claro
-        // Hover states
-        'primary-hover': '#0f1f2d',
-        'secondary-hover': '#1566c0',
-        'accent-hover': '#1a9b6e',
+        // Nueva paleta "Precisión Ágil" - Profesional y Moderna
+        primary: {
+          DEFAULT: '#0F172A', // Slate 900 - Profesional, confianza, autoridad
+          hover: '#020617',
+          light: '#1E293B',
+        },
+        secondary: {
+          DEFAULT: '#3B82F6', // Blue 500 - Innovación, tecnología, claridad
+          hover: '#2563EB',
+          light: '#60A5FA',
+        },
+        accent: {
+          DEFAULT: '#10B981', // Emerald 500 - Resultados, crecimiento, éxito
+          hover: '#059669',
+          light: '#34D399',
+        },
+        background: '#FFFFFF',
+        surface: '#F8FAFC', // Slate 50
+        'surface-dark': '#F1F5F9', // Slate 100
+        foreground: '#0F172A',
+        'text-muted': '#64748B', // Slate 500
+        'text-light': '#94A3B8', // Slate 400
+        dark: '#020617', // Slate 950
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',
