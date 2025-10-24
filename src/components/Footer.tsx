@@ -2,21 +2,21 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border-t border-slate-700 relative overflow-hidden">
+    <footer className="bg-dark border-t border-white/10 relative overflow-hidden">
       {/* Patrón de fondo */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-10"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-20"></div>
       
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Logo y descripción */}
           <div className="md:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="relative w-16 h-16 flex items-center justify-center bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 rounded-xl border-2 border-white/10 shadow-lg">
+              <div className="relative w-20 h-20 flex items-center justify-center">
                 <Image
                   src="/logo_idea.png"
                   alt="Ekali Solutions"
                   fill
-                  className="object-contain p-2"
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-col">

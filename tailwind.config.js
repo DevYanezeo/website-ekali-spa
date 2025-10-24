@@ -8,29 +8,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Nueva paleta "Precisión Ágil" - Profesional y Moderna
+        // Paleta profesional: Azul + Verde
         primary: {
-          DEFAULT: '#0F172A', // Slate 900 - Profesional, confianza, autoridad
-          hover: '#020617',
-          light: '#1E293B',
+          DEFAULT: '#1E3A8A', // Azul oscuro marino (se mantiene)
+          hover: '#1E40AF',
+          light: '#3B82F6',
         },
         secondary: {
-          DEFAULT: '#3B82F6', // Blue 500 - Innovación, tecnología, claridad
-          hover: '#2563EB',
-          light: '#60A5FA',
+          DEFAULT: '#059669', // Verde esmeralda
+          hover: '#047857',
+          light: '#10B981',
         },
         accent: {
-          DEFAULT: '#10B981', // Emerald 500 - Resultados, crecimiento, éxito
-          hover: '#059669',
-          light: '#34D399',
+          DEFAULT: '#0891B2', // Cyan/Turquesa
+          hover: '#0E7490',
+          light: '#06B6D4',
         },
-        background: '#FFFFFF',
-        surface: '#F8FAFC', // Slate 50
-        'surface-dark': '#F1F5F9', // Slate 100
-        foreground: '#0F172A',
-        'text-muted': '#64748B', // Slate 500
-        'text-light': '#94A3B8', // Slate 400
-        dark: '#020617', // Slate 950
+        background: '#F5F5F5', // Gris claro suave
+        surface: '#FFFFFF',
+        'surface-dark': '#E5E7EB',
+        foreground: '#111827',
+        'text-muted': '#6B7280',
+        'text-light': '#9CA3AF',
+        dark: '#1F2937', // Gris muy oscuro
+        darker: '#111827',
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-in-out',

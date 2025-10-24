@@ -90,62 +90,58 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Gradiente de texto mejorado - Nueva identidad */
+/* Gradiente de texto - Color sólido */
 .gradient-text {
-  background: linear-gradient(135deg, #0F172A 0%, #3B82F6 50%, #10B981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #1E3A8A;
+  font-weight: 700;
 }
 
-/* Gradiente corporativo principal */
+/* Colores sólidos: Azul + Verde */
 .gradient-primary {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  background: #1E3A8A;
 }
 
-/* Gradiente azul innovación */
 .gradient-secondary {
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  background: #059669;
 }
 
-/* Gradiente éxito */
 .gradient-accent {
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+  background: #0891B2;
 }
 
-/* Efectos de botones mejorados */
+/* Efectos de botones - Azul y Verde */
 .btn-primary {
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+  background: #1E3A8A;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
-  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.4);
+  background: #1E40AF;
+  box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+  background: #059669;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, #1E293B 0%, #334155 100%);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.4);
+  background: #047857;
+  box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
   transform: translateY(-2px);
 }
 
 .btn-accent {
-  background: linear-gradient(135deg, #10B981 0%, #059669 100%);
-  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+  background: #0891B2;
+  box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-accent:hover {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
-  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.4);
+  background: #0E7490;
+  box-shadow: 0 8px 20px rgba(8, 145, 178, 0.4);
   transform: translateY(-2px);
 }
