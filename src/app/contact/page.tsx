@@ -1,4 +1,46 @@
+'use client';
+
+import { useState, FormEvent } from 'react';
+
 export default function ContactPage() {
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('sending');
+    setErrorMessage('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      // IMPORTANTE: Reemplaza 'YOUR_FORM_ID' con tu ID de Formspree
+      // Ejemplo: https://formspree.io/f/xwpejrnb
+      const response = await fetch('https://formspree.io/f/mkgpwgna', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        form.reset();
+        // Auto-limpiar mensaje de éxito después de 5 segundos
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        const data = await response.json();
+        setErrorMessage(data.error || 'Error al enviar el mensaje');
+        setStatus('error');
+      }
+    } catch (error) {
+      setErrorMessage('Error de conexión. Por favor intenta nuevamente.');
+      setStatus('error');
+    }
+  }
+
   return (
     <div className="space-y-16">
       {/* Header Section */}
@@ -15,52 +57,103 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="max-w-4xl mx-auto px-4">
+      <section className="max-w-4xl mx-auto px-4 pb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="bg-surface rounded-xl p-8 shadow-md">
             <h2 className="text-2xl font-semibold text-foreground mb-6">Envíanos un mensaje</h2>
-            <form className="space-y-6">
+            
+            {/* Mensajes de estado */}
+            {status === 'success' && (
+              <div className="mb-6 p-4 bg-secondary/10 border border-secondary/20 rounded-md">
+                <p className="text-secondary font-medium">
+                  ✓ Mensaje enviado exitosamente. Te contactaremos pronto!
+                </p>
+              </div>
+            )}
+            
+            {status === 'error' && (
+              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-md">
+                <p className="text-red-600 font-medium">
+                  ✗ {errorMessage || 'Hubo un error. Intenta nuevamente.'}
+                </p>
+              </div>
+            )}
+
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-1">Nombre</label>
+                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 mb-1">
+                  Nombre *
+                </label>
                 <input 
                   type="text" 
-                  id="name" 
+                  id="name"
+                  name="name"
+                  required
                   className="w-full bg-background border border-foreground/10 rounded-md py-3 px-4 text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" 
                   placeholder="Tu nombre"
                 />
               </div>
+              
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-1">Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 mb-1">
+                  Email *
+                </label>
                 <input 
                   type="email" 
-                  id="email" 
+                  id="email"
+                  name="email"
+                  required
                   className="w-full bg-background border border-foreground/10 rounded-md py-3 px-4 text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" 
                   placeholder="tu@email.com"
                 />
               </div>
+              
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-foreground/80 mb-1">Asunto</label>
+                <label htmlFor="empresa" className="block text-sm font-medium text-foreground/80 mb-1">
+                  Empresa
+                </label>
                 <input 
                   type="text" 
-                  id="subject" 
+                  id="empresa"
+                  name="empresa"
                   className="w-full bg-background border border-foreground/10 rounded-md py-3 px-4 text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" 
-                  placeholder="Asunto de tu mensaje"
+                  placeholder="Nombre de tu empresa (opcional)"
                 />
               </div>
+              
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-1">Mensaje</label>
+                <label htmlFor="telefono" className="block text-sm font-medium text-foreground/80 mb-1">
+                  Teléfono
+                </label>
+                <input 
+                  type="tel" 
+                  id="telefono"
+                  name="telefono"
+                  className="w-full bg-background border border-foreground/10 rounded-md py-3 px-4 text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" 
+                  placeholder="+56 9 1234 5678 (opcional)"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 mb-1">
+                  Mensaje *
+                </label>
                 <textarea 
-                  id="message" 
+                  id="message"
+                  name="message"
+                  required
                   rows={6} 
                   className="w-full bg-background border border-foreground/10 rounded-md py-3 px-4 text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" 
                   placeholder="Cuéntanos sobre tu proyecto o consulta"
                 ></textarea>
               </div>
+              
               <button 
-                type="submit" 
-                className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-3 px-4 rounded-md shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+                type="submit"
+                disabled={status === 'sending'}
+                className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-3 px-4 rounded-md shadow-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Enviar mensaje
+                {status === 'sending' ? 'Enviando...' : 'Enviar mensaje'}
               </button>
             </form>
           </div>
