@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-on-background font-sans antialiased;
     overflow-x: hidden;
   }
 
@@ -12,10 +12,16 @@
     scroll-behavior: smooth;
   }
 
+  /* Material Symbols Configuration */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+  }
+
   /* Selection color */
   ::selection {
-    background: rgba(26, 127, 232, 0.3);
-    color: #193143;
+    background: rgba(167, 200, 255, 0.3); /* primary color with opacity */
+    color: #003061; /* on-primary color */
   }
 }
 

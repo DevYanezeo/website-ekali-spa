@@ -1,4 +1,4 @@
-﻿'use client';
+'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -14,13 +14,19 @@ export default function Navbar() {
   const navBackground = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(255, 255, 255, 0.8)', 'rgba(255, 255, 255, 0.98)']
+    ['rgba(2, 21, 35, 0)', 'rgba(2, 21, 35, 0.9)']
   );
 
   const navShadow = useTransform(
     scrollY,
     [0, 100],
-    ['0 0 0 transparent', '0 4px 30px rgba(0, 0, 0, 0.1)']
+    ['0 0 0 transparent', '0 10px 30px rgba(0, 0, 0, 0.5)']
+  );
+
+  const navBorder = useTransform(
+    scrollY,
+    [0, 100],
+    ['rgba(255, 255, 255, 0)', 'rgba(255, 255, 255, 0.05)']
   );
 
   const navHeight = useTransform(scrollY, [0, 100], ['6rem', '4.5rem']);
@@ -34,19 +40,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Menu items with stagger animation
   const menuItems = [
     { href: '/', label: 'Inicio' },
     { href: '/services', label: 'Servicios' },
+    { href: '#methodology', label: 'Metodología' },
     { href: '/about', label: 'Nosotros' }
   ];
 
   return (
     <motion.nav
-      className="fixed w-full z-50 backdrop-blur-xl border-b border-slate-200/50"
+      className="fixed w-full z-50 backdrop-blur-md"
       style={{
         backgroundColor: navBackground,
-        boxShadow: navShadow
+        boxShadow: navShadow,
+        borderBottomWidth: '1px',
+        borderBottomColor: navBorder
       }}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -60,7 +68,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <motion.div
-              className="relative w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center flex-shrink-0"
+              className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center flex-shrink-0"
               style={{ scale: logoScale }}
               whileHover={{ scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
@@ -72,6 +80,9 @@ export default function Navbar() {
                 className="object-contain"
               />
             </motion.div>
+            <span className="ml-3 text-xl font-black tracking-tighter text-on-surface hidden sm:block">
+              Ekali Solutions
+            </span>
           </Link>
 
           {/* Desktop Menu */}
@@ -89,20 +100,17 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="relative px-5 py-2.5 text-slate-700 font-medium rounded-xl overflow-hidden group"
+                  className="relative px-5 py-2.5 text-on-surface/80 font-bold rounded-xl overflow-hidden group tracking-tight"
                 >
-                  {/* Hover background */}
                   <motion.span
-                    className="absolute inset-0 bg-primary/5 rounded-xl"
+                    className="absolute inset-0 bg-primary/10 rounded-xl"
                     initial={{ scale: 0, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     transition={{ duration: 0.3 }}
                   />
-                  {/* Text */}
                   <span className="relative z-10 group-hover:text-primary transition-colors duration-300">
                     {item.label}
                   </span>
-                  {/* Underline */}
                   <motion.span
                     className="absolute bottom-1 left-5 right-5 h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full"
                     initial={{ scaleX: 0 }}
@@ -113,7 +121,6 @@ export default function Navbar() {
               </motion.div>
             ))}
 
-            {/* CTA Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -121,12 +128,11 @@ export default function Navbar() {
             >
               <motion.a
                 href="/contact"
-                className="ml-4 btn-primary text-white px-7 py-3 rounded-xl font-bold text-sm inline-block relative overflow-hidden group"
+                className="ml-4 bg-gradient-to-r from-primary to-primary-container text-on-primary px-7 py-3 rounded-xl font-black text-sm inline-block relative overflow-hidden group shadow-lg shadow-primary/20"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10">Contáctanos</span>
-                {/* Shine effect */}
                 <motion.span
                   className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full"
                   animate={{ translateX: ['100%', '-100%'] }}
@@ -139,13 +145,13 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <motion.button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-slate-100/80 hover:bg-slate-200/80 transition-colors"
+            className="md:hidden relative w-12 h-12 flex items-center justify-center rounded-xl bg-surface-variant/20 border border-outline-variant/30 text-on-surface"
             aria-label="Toggle menu"
             whileTap={{ scale: 0.95 }}
           >
             <div className="w-6 h-5 relative flex flex-col justify-between">
               <motion.span
-                className="w-full h-0.5 bg-slate-700 rounded-full origin-center"
+                className="w-full h-0.5 bg-current rounded-full origin-center"
                 animate={{
                   rotate: isOpen ? 45 : 0,
                   y: isOpen ? 9 : 0
@@ -153,7 +159,7 @@ export default function Navbar() {
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className="w-full h-0.5 bg-slate-700 rounded-full"
+                className="w-full h-0.5 bg-current rounded-full"
                 animate={{
                   opacity: isOpen ? 0 : 1,
                   x: isOpen ? 20 : 0
@@ -161,7 +167,7 @@ export default function Navbar() {
                 transition={{ duration: 0.3 }}
               />
               <motion.span
-                className="w-full h-0.5 bg-slate-700 rounded-full origin-center"
+                className="w-full h-0.5 bg-current rounded-full origin-center"
                 animate={{
                   rotate: isOpen ? -45 : 0,
                   y: isOpen ? -9 : 0
@@ -183,7 +189,7 @@ export default function Navbar() {
               transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
               <motion.div
-                className="px-2 pt-2 pb-6 space-y-1 bg-white/95 backdrop-blur-xl rounded-2xl mt-2 border border-slate-200 shadow-xl mb-4"
+                className="px-2 pt-2 pb-6 space-y-2 bg-surface-container/95 backdrop-blur-2xl rounded-[2rem] mt-2 border border-outline-variant/20 shadow-2xl mb-4"
               >
                 {menuItems.map((item, i) => (
                   <motion.div
@@ -194,7 +200,7 @@ export default function Navbar() {
                   >
                     <Link
                       href={item.href}
-                      className="block px-5 py-4 text-lg text-slate-700 hover:text-primary hover:bg-primary/5 rounded-xl transition-all duration-300 font-medium"
+                      className="block px-6 py-5 text-xl text-on-surface/80 hover:text-primary hover:bg-primary/5 rounded-2xl transition-all duration-300 font-bold"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -207,13 +213,13 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4, duration: 0.3, ease: 'easeOut' }}
                 >
-                  <a
+                  <Link
                     href="/contact"
-                    className="block mx-2 mt-4 btn-primary text-white px-6 py-4 rounded-xl font-bold text-center text-lg"
+                    className="block mx-2 mt-4 bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-5 rounded-2xl font-black text-center text-xl shadow-lg shadow-primary/20"
                     onClick={() => setIsOpen(false)}
                   >
                     Contáctanos
-                  </a>
+                  </Link>
                 </motion.div>
               </motion.div>
             </motion.div>
